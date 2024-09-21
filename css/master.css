@@ -1,0 +1,25 @@
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Small Screens */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium Screens */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
