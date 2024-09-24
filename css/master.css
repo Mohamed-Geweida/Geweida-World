@@ -63,7 +63,7 @@ a {
 
 .main-title {
     position: relative;
-    margin: 100px auto;
+    margin: 0 auto 80px;
     padding: 10px 20px;
     width: fit-content;
     border: 1px solid black;
