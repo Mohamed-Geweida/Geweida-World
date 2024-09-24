@@ -61,6 +61,51 @@ a {
     }
 }
 
+.main-title {
+    position: relative;
+    margin: 100px auto;
+    padding: 10px 20px;
+    width: fit-content;
+    border: 1px solid black;
+    transition: var(--main-transition);
+}
+
+.main-title::before,
+.main-title::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: var(--main-transition);
+}
+
+.main-title::before {
+    left: -30px;
+}
+
+.main-title:hover::before {
+    animation: left-move .6s linear forwards;
+}
+
+.main-title::after {
+    right: -30px;
+}
+
+.main-title:hover::after {
+    animation: right-move .6s linear forwards;
+}
+
+.main-title:hover {
+    transition-delay: 0.5s;
+    color: white;
+    border-color: white;
+}
+
 header {
     background-color: white;
     box-shadow: 0 0 10px #ddd;
@@ -186,6 +231,7 @@ header .mega-link:hover .mega-menu {
         top: 100px;
         padding: 10px;
     }
+
     header .mega-link:hover .mega-menu {
         top: 100px;
     }
@@ -218,7 +264,7 @@ header .mega-menu .links li {
 }
 
 @media (max-width: 767px) {
-    header .mega-menu .links:nth-child(3) li:last-child a{
+    header .mega-menu .links:nth-child(3) li:last-child a {
         border-bottom: none;
         margin-bottom: 2px;
     }
@@ -373,5 +419,31 @@ header .mega-menu .links li a i {
     40%,
     60% {
         transform: translateY(-15px);
+    }
+}
+
+@keyframes left-move {
+    50% {
+        left: 0;
+    }
+
+    100% {
+        left: 0;
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@keyframes right-move {
+    50% {
+        right: 0;
+    }
+
+    100% {
+        right: 0;
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
     }
 }
