@@ -13,6 +13,10 @@
     --section-background: #ececec;
 }
 
+::selection {
+    background-color: var(--main-color);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -143,6 +147,120 @@ header .container .main-nav li a:hover::before {
     left: 0;
 }
 
+header .mega-menu {
+    position: absolute;
+    opacity: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
+    width: 75%;
+    max-width: 100%;
+    background-color: white;
+    padding: 30px;
+    z-index: -1;
+    border-bottom: 3px solid var(--main-color);
+    transition: top var(--main-transition), opacity var(--main-transition), z-index var(--main-transition);
+}
+
+header .mega-link:hover .mega-menu {
+    z-index: 100;
+    opacity: 1;
+    top: 73px;
+}
+
+@media (max-width: 991px) {
+    header .mega-link:hover .mega-menu {
+        justify-content: unset;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 767px) {
+    header .mega-menu {
+        flex-direction: column;
+        gap: 0;
+        top: 100px;
+        padding: 10px;
+    }
+    header .mega-link:hover .mega-menu {
+        top: 100px;
+    }
+}
+
+header .mega-menu .image img {
+    max-width: 100%;
+    position: relative;
+}
+
+@media (max-width: 991px) {
+    header .mega-menu .image img {
+        display: none;
+    }
+
+    header .mega-menu .links {
+        min-width: 240px;
+    }
+}
+
+header .mega-menu .links li {
+    all: unset;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    margin: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+@media (max-width: 767px) {
+    header .mega-menu .links:nth-child(3) li:last-child a{
+        border-bottom: none;
+        margin-bottom: 2px;
+    }
+}
+
+header .mega-menu .links li a {
+    width: 100%;
+    justify-content: left;
+    color: var(--main-color);
+    position: relative;
+    height: 60px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 30px 10px 10px;
+    margin-bottom: 5px;
+}
+
+header .mega-menu .links li a:hover {
+    background-color: transparent;
+}
+
+header .mega-menu .links li a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #FAFAFA;
+    transition: .6s;
+    top: 0;
+    left: -100%;
+    z-index: -1;
+}
+
+header .mega-menu .links li:hover a::before {
+    left: 0;
+}
+
+header .mega-menu .links li a i {
+    margin-right: 10px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
 .landing {
     position: relative;
 }
@@ -164,7 +282,7 @@ header .container .main-nav li a:hover::before {
     min-height: calc(100vh - 72px);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding-bottom: 120px;
 }
 
@@ -176,7 +294,7 @@ header .container .main-nav li a:hover::before {
 @media (max-width: 991px) {
     .landing .container .text {
         text-align: center;
-        margin-top: -60px;
+        margin: -60px auto;
     }
 }
 
@@ -212,9 +330,10 @@ header .container .main-nav li a:hover::before {
     animation: bouncing 2s linear infinite;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
     .landing a {
         bottom: 30%;
+        left: 47%;
     }
 }
 
@@ -250,7 +369,9 @@ header .container .main-nav li a:hover::before {
     100% {
         transform: translateY(0);
     }
-    40%, 60% {
+
+    40%,
+    60% {
         transform: translateY(-15px);
     }
 }
