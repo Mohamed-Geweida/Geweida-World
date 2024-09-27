@@ -807,7 +807,7 @@ header .mega-menu .links li a i {
     right: 0;
     width: calc(100% - 60px);
     z-index: -1;
-} 
+}
 
 .team .container .box .data {
     display: flex;
@@ -833,7 +833,7 @@ header .mega-menu .links li a i {
     justify-content: center;
 }
 
-.team .container .box .data .socials a  {
+.team .container .box .data .socials a {
     margin-bottom: 30px;
 }
 
@@ -864,6 +864,107 @@ header .mega-menu .links li a i {
 .team .container .box .info p {
     margin-top: 10px;
     margin-bottom: 25px;
+}
+
+.services {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--section-background);
+}
+
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.services .container .box {
+    background-color: white;
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    counter-increment: services;
+    transition: var(--main-transition);
+    position: relative;
+}
+
+.services .container .box:hover {
+    transform:translateY(-10px);
+}
+
+.services .container .box::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 0;
+    transition: var(--main-transition);
+    background-color: var(--main-color);
+}
+
+.services .container .box:hover::before {
+    width: 100%;
+}
+
+.services .container .box i {
+    margin: 30px auto 20px;
+    display: block;
+    text-align: center;
+    color: #d5d5d5;
+}
+
+.services .container .box h3 {
+    text-align: center;
+    margin: 20px 0 30px;
+    color: var(--main-color);
+    font-size: 25px;
+}
+
+.services .container .box .info {
+    padding: 15px;
+    position: relative;
+    background-color: #f9f9f9;
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+}
+
+.services .container .box .info::before {
+    content: "0" counter(services);
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--main-color);
+    width: 70px;
+    height: 100%;
+}
+
+.services .container .box .info::after {
+    content: "";
+    width: 48px;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 75px;
+    background-color: #d5d5d5;
+    transform: skewX(-30deg);
+}
+
+.services .container .box .info a {
+    color: var(--main-color);
+    font-weight: bold;
+    transition: var(--main-transition);
+}
+
+.services .container .box .info a:hover {
+    color: var(--main-color-alt);
 }
 
 @keyframes up-down {
