@@ -950,7 +950,7 @@ header .mega-menu .links li a i {
     content: "";
     width: 48px;
     position: absolute;
-    height: 100%;
+    height: calc(100% + .4px);
     top: 0;
     left: 75px;
     background-color: #d5d5d5;
