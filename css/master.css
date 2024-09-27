@@ -63,6 +63,8 @@ a {
 
 .main-title {
     position: relative;
+    text-transform: uppercase;
+    font-size: 30px;
     margin: 0 auto 80px auto;
     padding: 10px 20px;
     width: fit-content;
