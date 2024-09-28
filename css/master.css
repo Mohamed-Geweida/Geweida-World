@@ -1423,8 +1423,6 @@ header .mega-menu .links li a i {
     position: relative;
 }
 
-.video .container {}
-
 .video .container .holder {
     display: flex;
     justify-content: center;
@@ -1432,15 +1430,15 @@ header .mega-menu .links li a i {
     border: 1px solid #ddd;
 }
 
+@media (max-width: 767px) {
+    .video .container .holder {
+        flex-direction: column;
+    }
+}
+
 .video .container .holder .list {
     min-width: 300px;
     background-color: white;
-}
-
-@media (max-width: 767px) {
-    .video .container .holder .list {
-        flex: 1;
-    }
 }
 
 .video .container .holder .list .title {
@@ -1484,12 +1482,6 @@ header .mega-menu .links li a i {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-@media (max-width: 767px) {
-    .video .container .holder .preview {
-        display: none;
-    }
 }
 
 .video .container .holder .preview img {
